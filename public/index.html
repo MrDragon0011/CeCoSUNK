@@ -8,9 +8,17 @@
 <body>
     <div id="canvas-row">
         <div id="side-panel">
-            <button onclick="createBody()">New Body</button>
+            <button onclick="displaySettings()">New Body</button>
             <div id="body-settings">
-                <p>Body settings coming soon!</p>
+                <label for="mass-input">Mass: </label>
+                <input type="text" id="mass-input">
+                <label for="xpos-input">X pos: </label>
+                <input type="text" id="xpos-input">
+                <label for="ypos-input">Y pos: </label>
+                <input type="text" id="ypos-input">
+                <label for="radius-input">Radius: </label>
+                <input type="text" id="radius-input">
+                <button onclick="createBody()">Submit</button>
             </div>
         </div>
         <div id="canvas-col">

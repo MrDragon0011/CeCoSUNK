@@ -4,6 +4,10 @@ const logDisplay = document.querySelector('#log');
 const posDisplay = document.querySelector('#pos');
 const bodySettings = document.querySelector('#body-settings');
 const timeDisplay = document.querySelector('#time-display');
+const massInput = document.querySelector('#mass-input');
+const xPosInput = document.querySelector('#xpos-input');
+const yPosInput = document.querySelector('#ypos-input');
+const radiusInput = document.querySelector('#radius-input');
 
 const G = 1; //gravitational constant
 let t = 0; // start time of the simulated universe
@@ -69,11 +73,15 @@ function displayStats() {
     }
 }
 
-function createBody(){
-    var blankBody = {x: 350, y: 350, vx: 0, vy: 0, mass: 5, radius: 5, color: "green"};
-    bodies.push(blankBody);
-    addDisplaysFor(bodies.length - 1);
+function displaySettings(){
     bodySettings.style.display = 'flex';
+}
+
+function createBody(){
+    mass = massInput.value;
+    xpos = xPosInput.value;
+    ypos = yPosInput.value;
+    radius = radiusInput.value;
 }
 
 function update() {
