@@ -13,6 +13,17 @@ const colorInput = document.querySelector('#color-input');
 const G = 1; //gravitational constant
 let t = 0; // start time of the simulated universe
 
+let zoom = 1;
+const MIN_ZOOM = 0.2;
+const MAX_ZOOM = 10;
+
+canvas.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    const zoomIntensity = 0.001;
+    zoom *= 1 - e.deltaY * zoomIntensity;
+    zoom = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, zoom));
+}, { passive: false });
+
 const bodies = [
     { x: 300, y: 300, vx: 0,    vy: 0,    mass: 5000, radius: 20, color: "yellow" },      // star
     { x: 450, y: 300, vx: 0,    vy: 2.4,  mass: 5,     radius: 6,  color: "blue" },  // planet 1
@@ -39,7 +50,7 @@ bodies.forEach((_, i) => addDisplaysFor(i));
 
 function updateTime(){
     t++;
-    timeDisplay.innerHTML = "t (0.016s)= " + t;
+    timeDisplay.innerHTML = "t = " + t;
 }
 
 function drawCircle(x, y, radius, color){
@@ -122,7 +133,13 @@ function update() {
 function render() {
     ctx.fillStyle = "rgba(0, 0, 0, 0.3)"; //trail
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.save();
+    ctx.translate(canvas.width / 2, canvas.height / 2);
+    ctx.scale(zoom, zoom);
+    ctx.translate(-canvas.width / 2, -canvas.height / 2);
     for (const b of bodies) drawCircle(b.x, b.y, b.radius, b.color);
+    ctx.restore();
 }
 
 function loop(){
