@@ -43,3 +43,4 @@ Please open an issue on [GitHub](https://github.com/btfcookies/CeCoSunk/issues) 
 
 - Keep it simple and readable — no build step or framework is in use, so plain, idiomatic JS/CSS/HTML is preferred.
 - Avoid adding dependencies unless they're clearly worth the tradeoff for a project this size.
+- As Geoffrey Wu once said, "a good rule of thumb is to have any text meant to be read for humans be written by humans." We ask that any text such as documentation and comments is written by humans. 
