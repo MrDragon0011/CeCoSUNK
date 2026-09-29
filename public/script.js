@@ -16,6 +16,7 @@ let t = 0; // start time of the simulated universe
 let zoom = 1;
 const MIN_ZOOM = 0.2;
 const MAX_ZOOM = 10;
+const ZOOM_STEP = 1.2;
 
 canvas.addEventListener('wheel', (e) => {
     e.preventDefault();
@@ -23,6 +24,16 @@ canvas.addEventListener('wheel', (e) => {
     zoom *= 1 - e.deltaY * zoomIntensity;
     zoom = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, zoom));
 }, { passive: false });
+
+function zoomIn(){
+    zoom *= ZOOM_STEP;
+    zoom = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, zoom));
+}
+
+function zoomOut(){
+    zoom /= ZOOM_STEP;
+    zoom = Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, zoom));
+}
 
 const bodies = [
     { x: 300, y: 300, vx: 0,    vy: 0,    mass: 5000, radius: 20, color: "yellow" },      // star
