@@ -1,6 +1,26 @@
 body {background: black; margin: 0; overflow: hidden; display: flex; flex-direction: column; height: 100vh;}
 #canvas-row {display: flex; flex-shrink: 0; justify-content: flex-start; align-items: flex-start; margin-top: 40px;}
-#side-panel {width: 300px; height: 600px; margin-right: 20px; border: 1px solid white;}
+#side-panel {width: 300px; height: 600px; margin-right: 20px; border: 1px solid white; box-sizing: border-box;}
+
+#new-body-btn {
+    display: block;
+    width: calc(100% - 30px);
+    box-sizing: border-box;
+    margin: 15px;
+    padding: 8px;
+    background: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#new-body-btn:hover {
+    background: white;
+    color: black;
+}
 #canvas-col {display: flex; flex-direction: column; flex-shrink: 0;}
 #time-display {color: white; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI'; margin-bottom: 5px;}
 canvas {display: block; flex-shrink: 0; background:black; border: 1px solid white;}
@@ -8,5 +28,42 @@ canvas {display: block; flex-shrink: 0; background:black; border: 1px solid whit
 #panel {flex: 1; min-height: 0; display: flex; flex-direction: row; border: 1px solid white; color: white; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';}
 #log {flex: 1; min-width: 0; overflow-y: auto; white-space: pre-line;}
 #pos {flex: 1; min-width: 0; overflow-y: auto; white-space: pre-line; border-left: 1px solid white;}
-#body-settings {display: none; color: white;}
+#body-settings {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI';
+}
+
+#body-settings label {
+    font-size: 13px;
+}
+
+#body-settings input,
+#body-settings select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    background: black;
+    color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+#body-settings button {
+    margin-top: 6px;
+    padding: 8px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
 

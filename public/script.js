@@ -8,6 +8,7 @@ const massInput = document.querySelector('#mass-input');
 const xPosInput = document.querySelector('#xpos-input');
 const yPosInput = document.querySelector('#ypos-input');
 const radiusInput = document.querySelector('#radius-input');
+const colorInput = document.querySelector('#color-input');
 
 const G = 1; //gravitational constant
 let t = 0; // start time of the simulated universe
@@ -78,10 +79,20 @@ function displaySettings(){
 }
 
 function createBody(){
-    mass = massInput.value;
-    xpos = xPosInput.value;
-    ypos = yPosInput.value;
-    radius = radiusInput.value;
+    let inputtedMass = parseFloat(massInput.value);
+    let xpos = parseFloat(xPosInput.value);
+    let ypos = parseFloat(yPosInput.value);
+    let inputtedRadius = parseFloat(radiusInput.value);
+    let inputtedColor = colorInput.value;
+
+    if ([inputtedMass, xpos, ypos, inputtedRadius].some(Number.isNaN)) {
+        alert("Mass, X pos, Y pos, and Radius must all be numbers.");
+        return;
+    }
+
+    let newBody = {x: xpos, y: ypos, vx: 0, vy: 0, mass: inputtedMass, radius: inputtedRadius, color: inputtedColor};
+    bodies.push(newBody);
+    addDisplaysFor(bodies.length - 1);
 }
 
 function update() {
