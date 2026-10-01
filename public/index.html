@@ -2,48 +2,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CeCoSUNK (Celestial Collision Simulator Utilizing Newtonian Kinematics)</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <title>CeCoSUNK</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <div id="canvas-row">
-        <div id="side-panel">
-            <button id="new-body-btn" onclick="displaySettings()">New Body</button>
-            <div id="body-settings">
-                <label for="mass-input">Mass: </label>
-                <input type="text" id="mass-input">
-                <label for="xpos-input">X pos: </label>
-                <input type="text" id="xpos-input">
-                <label for="ypos-input">Y pos: </label>
-                <input type="text" id="ypos-input">
-                <label for="radius-input">Radius: </label>
-                <input type="text" id="radius-input">
-                <label for="color-input">Color: </label>
-                <select id="color-input" name="colors">
-                <option value="Red">Red</option>
-                <option value="Blue">Blue</option>
-                <option value="Green">Green</option>
-                <option value="Yellow">Yellow</option>
-                </select>
-                <button onclick="createBody()">Submit</button>
+    <div class="nav-bar">
+        <nav>
+            <a class="nav-logo" href="index.html">CeCoSUNK</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <div class="nav-right">
+                <button onclick="window.location.href='simulation.html'">Open Simulation</button>
             </div>
-        </div>
-        <div id="canvas-col">
-            <div id="time-display"></div>
-            <canvas id="space" width="600" height="600"></canvas>
-            <div id="zoom-controls">
-                <button id="zoom-in-btn" title="Zoom in" onclick="zoomIn()"><i class="bi bi-zoom-in"></i></button>
-                <button id="zoom-out-btn" title="Zoom out" onclick="zoomOut()"><i class="bi bi-zoom-out"></i></button>
-            </div>
-        </div>
+        </nav>
     </div>
-    <div id="bar"></div>
-    <div id="panel">
-        <span id="log"></span>
-        <span id="pos"></span>
+    <div class="hero">
+        <h1>Celestial physics, right in your browser.</h1>
+        <img class="laptop-mockup" src="assets/macbook-mockup.png" alt="MacBook showing the planets N-body simulation running in the browser">
     </div>
-    <script src="script.js"></script>
-    <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 </body>
 </html>
