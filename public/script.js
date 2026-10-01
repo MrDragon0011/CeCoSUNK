@@ -96,6 +96,10 @@ function displayStats() {
     }
 }
 
+function updateVT() {
+    
+}
+
 function displaySettings(){
     bodySettings.style.display = 'flex';
 }
