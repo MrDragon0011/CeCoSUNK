@@ -12,7 +12,7 @@
         function render() {
             var dark = root.getAttribute('data-theme') === 'dark';
             btn.innerHTML = '<i class="bi ' + (dark ? 'bi-sun-fill' : 'bi-moon-fill') + '"></i>';
-            btn.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+            btn.setAttribute('aria-label', dark ? 'Light mode' : 'Dark mode');
         }
 
         btn.addEventListener('click', function () {
