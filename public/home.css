@@ -94,6 +94,20 @@ body h1 {
     filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.2));
 }
 
+.nav-logo {
+    position: relative;
+}
+
+.nav-logo img {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 10px;
+    height: 24px;
+    width: auto;
+}
+
 .theme-toggle {
     position: fixed;
     right: 24px;
